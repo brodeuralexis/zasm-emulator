@@ -1,0 +1,25 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{matrixc.os}}
+    steps:
+      - uses: actions/checkout@v1
+      - uses: goto-bus-stop/setup-zig@v1.0.0
+        with:
+          version: master
+      - run: zig build test
+
+  lint:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: goto-bus-stop/setup-zig@v1.0.0
+        with:
+          version: master
+      - run: zig fmt --check src/*.zig
