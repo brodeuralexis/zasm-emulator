@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{matrixc.os}}
+    runs-on: ${{matrix.os}}
     steps:
       - uses: actions/checkout@v1
       - uses: goto-bus-stop/setup-zig@v1.0.0
