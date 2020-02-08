@@ -10,6 +10,6 @@ indent_style = space
 indent_size = 4
 end_of_line = lf
 
-[{.editorconfig,.gitignore}]
+[{.editorconfig,.gitignore,.gitattributes}]
 indent_style = space
 indent_size = 2
